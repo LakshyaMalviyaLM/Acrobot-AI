@@ -12,10 +12,7 @@
   const welcomeScreen = document.getElementById("welcome-screen");
   const userInput = document.getElementById("user-input");
   const sendBtn = document.getElementById("send-btn");
-  const sidebar = document.getElementById("sidebar");
-  const menuBtn = document.getElementById("menu-btn");
   const voiceBtn = document.getElementById("voice-btn");
-  const sidebarClose = document.getElementById("sidebar-close");
   const newChatBtn = document.getElementById("new-chat-btn");
 
   // Chat state
@@ -46,10 +43,7 @@
   let formWizardStep = 0;
   let formWizardData = { name: null, phone: null, rank: null, category: null, state: null, branch: null };
 
-  // --- Overlay for mobile sidebar ---
-  const overlay = document.createElement("div");
-  overlay.className = "sidebar-overlay";
-  document.body.appendChild(overlay);
+
 
 
   // ===========================
@@ -100,24 +94,6 @@
 
 
   // ===========================
-  //  Sidebar Controls
-  // ===========================
-
-  menuBtn.addEventListener("click", () => {
-    sidebar.classList.add("open");
-    overlay.classList.add("active");
-  });
-
-  function closeSidebar() {
-    sidebar.classList.remove("open");
-    overlay.classList.remove("active");
-  }
-
-  sidebarClose.addEventListener("click", closeSidebar);
-  overlay.addEventListener("click", closeSidebar);
-
-
-  // ===========================
   //  New Chat
   // ===========================
 
@@ -145,14 +121,12 @@
       const query = btn.dataset.query;
       if (query === "__FORM_HELPER__") {
         startFormWizard();
-        closeSidebar();
         return;
       }
       if (query) {
         userInput.value = query;
         sendBtn.disabled = false;
         handleSend();
-        closeSidebar();
       }
     });
   });
@@ -2088,7 +2062,6 @@
       item.addEventListener('click', (e) => {
         if (e.target.closest('.saved-chat-item-delete')) return;
         loadSession(session);
-        closeSidebar();
       });
 
       // Delete session
@@ -2174,10 +2147,12 @@
   if (newChatBtn) {
     newChatBtn.addEventListener("click", () => {
       messagesEl.innerHTML = "";
+      if (welcomeScreen) {
+        messagesEl.appendChild(welcomeScreen);
+        welcomeScreen.style.display = "flex";
+      }
       localStorage.removeItem("chatHistory");
       chatStarted = false;
-      if (welcomeScreen) welcomeScreen.style.display = "block";
-      closeSidebar();
       playSound('click');
     });
   }

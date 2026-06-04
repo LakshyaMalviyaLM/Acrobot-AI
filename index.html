@@ -28,107 +28,12 @@
   </div>
 
   <div class="app-container">
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <div class="logo">
-          <div class="logo-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-              <path d="M2 17l10 5 10-5"/>
-              <path d="M2 12l10 5 10-5"/>
-            </svg>
-          </div>
-          <div class="logo-text">
-            <h1>AcroBot AI</h1>
-            <span>Admission Counselor</span>
-          </div>
-        </div>
-        <button class="sidebar-close" id="sidebar-close" aria-label="Close sidebar">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
-      </div>
-
-      <div class="sidebar-content">
-        <div class="quick-actions">
-          <h3>Quick Topics</h3>
-          <button class="quick-btn" data-query="What are the cutoff ranks for all branches?">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            Cutoff Ranks
-          </button>
-          <button class="quick-btn" data-query="Tell me about the fees structure at Acropolis">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-            Fees Structure
-          </button>
-          <button class="quick-btn" data-query="What are the placement statistics at Acropolis?">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-            Placements
-          </button>
-          <button class="quick-btn" data-query="Show me cutoff trends graph for all branches">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            Cutoff Trends Graph
-          </button>
-          <button class="quick-btn" data-query="What documents are required for admission?">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Documents
-          </button>
-          <button class="quick-btn" data-query="Explain the MP DTE counseling process">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            Counseling Process
-          </button>
-          <button class="quick-btn" data-query="Compare CSE vs AI&ML vs IT branches">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-            Compare Branches
-          </button>
-          <button class="quick-btn" data-query="What scholarship options are available?">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            Scholarships
-          </button>
-          <button class="quick-btn" id="form-helper-btn" data-query="__FORM_HELPER__">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-            Admission Form Helper
-          </button>
-        </div>
-
-        <!-- Saved Chats Section -->
-        <div class="saved-chats-section">
-          <h3>💬 Saved Chats</h3>
-          <div id="saved-chats-list" class="saved-chats-list">
-            <p class="no-saved-chats" style="font-size:0.78rem; color:var(--text-muted); padding:8px 0;">No saved chats yet.</p>
-          </div>
-          <button class="quick-btn" id="save-current-chat-btn" style="margin-top:6px; color:var(--accent-400);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-            Save Current Chat
-          </button>
-        </div>
-
-        <div class="college-info">
-          <h3>About AITR</h3>
-          <div class="info-card">
-            <p><strong>Acropolis Institute of Technology & Research</strong></p>
-            <p>Bypass Road, Mangliya Square, Indore, MP 453771</p>
-            <div class="info-badges">
-              <span class="badge">NAAC A+</span>
-              <span class="badge">AICTE Approved</span>
-              <span class="badge">RGPV Affiliated</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="sidebar-footer">
-        <p>Data based on 2022–25 trends</p>
-        <p class="disclaimer">Estimates only · Not official</p>
-      </div>
-    </aside>
 
     <!-- Main Chat Area -->
     <main class="chat-area">
       <!-- Header -->
       <header class="chat-header">
-        <button class="menu-btn" id="menu-btn" aria-label="Open sidebar">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
+
         <div class="header-info">
           <div class="status-dot"></div>
           <span>AcroBot AI is online</span>
@@ -183,6 +88,20 @@
                 <p>Compare branches and get personalized recommendations</p>
               </div>
             </div>
+
+            <!-- Saved Chats Area in Welcome Screen -->
+            <div class="saved-chats-section" style="margin-top: 30px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; padding: 0 20px;">
+              <h3 style="font-size: 0.85rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px;">💬 Saved Chats</h3>
+              <div id="saved-chats-list" class="saved-chats-list" style="max-height: 250px; overflow-y: auto;">
+                <p class="no-saved-chats" style="font-size:0.85rem; color:var(--text-muted); padding:8px 0;">No saved chats yet.</p>
+              </div>
+            </div>
+
+            <!-- College Address -->
+            <div class="college-address" style="margin-top: 40px; text-align: center; color: var(--text-muted); font-size: 0.75rem;">
+              <p><strong>Acropolis Institute of Technology & Research</strong></p>
+              <p>Bypass Road, Mangliya Square, Indore, MP 453771</p>
+            </div>
           </div>
         </div>
       </div>
@@ -192,6 +111,17 @@
 
       <!-- Input Area -->
       <div class="input-area">
+        <!-- Horizontal Quick Actions Bar -->
+        <div class="quick-actions-bar">
+          <button class="quick-btn" data-query="What are the cutoff ranks for all branches?">🎯 Cutoffs</button>
+          <button class="quick-btn" data-query="Tell me about the fees structure at Acropolis">💰 Fees</button>
+          <button class="quick-btn" data-query="What are the placement statistics at Acropolis?">💼 Placements</button>
+          <button class="quick-btn" data-query="What documents are required for admission?">📄 Documents</button>
+          <button class="quick-btn" data-query="Explain the MP DTE counseling process">🏫 Counseling</button>
+          <button class="quick-btn" data-query="Compare CSE vs AI&ML vs IT branches">⚖️ Compare</button>
+          <button class="quick-btn" data-query="What scholarship options are available?">🎓 Scholarships</button>
+          <button class="quick-btn" id="form-helper-btn" data-query="__FORM_HELPER__">📝 Predict Admission</button>
+        </div>
         <div class="input-container">
           <div class="input-wrapper" id="input-wrapper">
             <input type="file" id="file-upload" accept="image/*" style="display:none;" />
@@ -233,7 +163,5 @@
   </div>
 
   <script src="/socket.io/socket.io.js"></script>
-  <script src="knowledge-base.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
