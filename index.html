@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AcroBot AI – Acropolis Institute Admission Counselor</title>
+  <meta name="description" content="AcroBot is an AI-powered admission counselor for Acropolis Institute of Technology and Research, Indore. Get real-time admission predictions, cutoff info, fees, placements, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-animation">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <h1>AcroBot AI</h1>
+            <span>Admission Counselor</span>
+          </div>
+        </div>
+        <button class="sidebar-close" id="sidebar-close" aria-label="Close sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="quick-actions">
+          <h3>Quick Topics</h3>
+          <button class="quick-btn" data-query="What are the cutoff ranks for all branches?">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Cutoff Ranks
+          </button>
+          <button class="quick-btn" data-query="Tell me about the fees structure at Acropolis">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            Fees Structure
+          </button>
+          <button class="quick-btn" data-query="What are the placement statistics at Acropolis?">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            Placements
+          </button>
+          <button class="quick-btn" data-query="Show me cutoff trends graph for all branches">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Cutoff Trends Graph
+          </button>
+          <button class="quick-btn" data-query="What documents are required for admission?">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Documents
+          </button>
+          <button class="quick-btn" data-query="Explain the MP DTE counseling process">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Counseling Process
+          </button>
+          <button class="quick-btn" data-query="Compare CSE vs AI&ML vs IT branches">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            Compare Branches
+          </button>
+          <button class="quick-btn" data-query="What scholarship options are available?">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Scholarships
+          </button>
+          <button class="quick-btn" id="form-helper-btn" data-query="__FORM_HELPER__">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Admission Form Helper
+          </button>
+        </div>
+
+        <!-- Saved Chats Section -->
+        <div class="saved-chats-section">
+          <h3>💬 Saved Chats</h3>
+          <div id="saved-chats-list" class="saved-chats-list">
+            <p class="no-saved-chats" style="font-size:0.78rem; color:var(--text-muted); padding:8px 0;">No saved chats yet.</p>
+          </div>
+          <button class="quick-btn" id="save-current-chat-btn" style="margin-top:6px; color:var(--accent-400);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Save Current Chat
+          </button>
+        </div>
+
+        <div class="college-info">
+          <h3>About AITR</h3>
+          <div class="info-card">
+            <p><strong>Acropolis Institute of Technology & Research</strong></p>
+            <p>Bypass Road, Mangliya Square, Indore, MP 453771</p>
+            <div class="info-badges">
+              <span class="badge">NAAC A+</span>
+              <span class="badge">AICTE Approved</span>
+              <span class="badge">RGPV Affiliated</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <p>Data based on 2022–25 trends</p>
+        <p class="disclaimer">Estimates only · Not official</p>
+      </div>
+    </aside>
+
+    <!-- Main Chat Area -->
+    <main class="chat-area">
+      <!-- Header -->
+      <header class="chat-header">
+        <button class="menu-btn" id="menu-btn" aria-label="Open sidebar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="header-info">
+          <div class="status-dot"></div>
+          <span>AcroBot AI is online</span>
+        </div>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode" style="background:none; border:none; color:var(--text-secondary); cursor:pointer; margin-right:10px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="new-chat-btn" id="download-chat-btn" aria-label="Download Chat" style="margin-right:10px; background:var(--bg-dark);">
+          📥 Save Chat
+        </button>
+        <button class="new-chat-btn" id="new-chat-btn" aria-label="New chat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          New Chat
+        </button>
+      </header>
+
+      <!-- Messages -->
+      <div class="messages-container" id="messages-container">
+        <div class="messages-inner" id="messages">
+          <!-- Welcome Screen -->
+          <div class="welcome-screen" id="welcome-screen">
+            <div class="welcome-icon">
+              <div class="welcome-icon-glow"></div>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h2>Welcome to AcroBot AI</h2>
+            <p>Your AI admission counselor for <strong>Acropolis Institute of Technology and Research, Indore</strong></p>
+
+            <div class="welcome-cards">
+              <div class="welcome-card" data-query="__FORM_HELPER__">
+                <div class="wc-icon">🎯</div>
+                <h4>Predict My Chances</h4>
+                <p>Step-by-step admission prediction wizard</p>
+              </div>
+              <div class="welcome-card" data-query="Show me cutoff trends graph for all branches">
+                <div class="wc-icon">📈</div>
+                <h4>Cutoff Trends</h4>
+                <p>View year-wise cutoff graphs for all branches</p>
+              </div>
+              <div class="welcome-card" data-query="Tell me about placements and fees at Acropolis">
+                <div class="wc-icon">💼</div>
+                <h4>Fees & Placements</h4>
+                <p>Explore fee structure and placement statistics</p>
+              </div>
+              <div class="welcome-card" data-query="I'm confused between CSE and AI&ML. Which is better?">
+                <div class="wc-icon">🤔</div>
+                <h4>Branch Guidance</h4>
+                <p>Compare branches and get personalized recommendations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smart Predictive Suggestions -->
+      <div class="predictive-suggestions" id="predictive-suggestions"></div>
+
+      <!-- Input Area -->
+      <div class="input-area">
+        <div class="input-container">
+          <div class="input-wrapper" id="input-wrapper">
+            <input type="file" id="file-upload" accept="image/*" style="display:none;" />
+            <button class="attach-btn voice-btn" id="attach-btn" aria-label="Upload Scorecard" title="Upload Scorecard Image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+              </svg>
+            </button>
+            <button class="voice-btn" id="voice-btn" aria-label="Voice Input" title="Click to speak">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                <line x1="12" y1="19" x2="12" y2="22"/>
+              </svg>
+            </button>
+            <textarea
+              id="user-input"
+              placeholder="Ask about admissions, cutoffs, fees, placements..."
+              rows="1"
+              aria-label="Type your message"
+            ></textarea>
+            <button class="tts-btn" id="tts-btn" aria-label="Toggle Text-to-Speech" title="Read Aloud: OFF">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+              </svg>
+            </button>
+            <button class="send-btn" id="send-btn" aria-label="Send message" disabled>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+          </div>
+          <p class="input-hint">AcroBot provides estimates based on recent trends. Cutoffs may vary each year.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="knowledge-base.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
