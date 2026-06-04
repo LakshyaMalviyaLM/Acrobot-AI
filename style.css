@@ -276,9 +276,8 @@ textarea {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 10px;
-}
-
 .quick-btn {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 10px;
