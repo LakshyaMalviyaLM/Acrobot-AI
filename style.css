@@ -1302,7 +1302,7 @@ textarea {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
+  /* Removed backdrop-filter to prevent mobile browser z-index rendering bugs */
   z-index: 199;
 }
 
